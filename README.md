@@ -1,6 +1,6 @@
 # Clean Architecture
 
-## Chapter 1 Design & Architecture
+## Chapter 1: Design & Architecture
 ### Goal
 The goal of software architecture is to minimise the human resources required to build & maintain the required system.
 
@@ -9,14 +9,14 @@ The goal of software architecture is to minimise the human resources required to
 - Cost per line of code
 - Productivity over time
 
-## Chapter 2 A Tale of Two Values
+## Chapter 2: A Tale of Two Values
 ### Behaviour vs Architecture
 
 Consider importance & urgency matrix. In most cases, business logic (behaviour) is considered more urgent and architecture may never be urgent in the eyes or business managers.
 
 Consider the extreme, new features can be easily added to a system with very good architecture. System with too many features, but poor architecture may end up becoming impossible for additional features to be added in.
 
-## Chapter 3 - 6 Programming Paradigms
+## Chapter 3 - 6: Programming Paradigms
 
 - Structured Programming: impose discipline on direct transfer of control
   - ability to create falsifiable units of programming
@@ -32,7 +32,7 @@ Consider the extreme, new features can be easily added to a system with very goo
 
 Essentially: software is composed of sequence, selection, iteration, and indirection. Nothing more, nothing less.
 
-## Chapter 7 - 11 Design Principles:
+## Chapter 7 - 11: Design Principles
 #### Goal of the principle is to create mid-level software structures that:
 - tolerate change
 - easy to understand
