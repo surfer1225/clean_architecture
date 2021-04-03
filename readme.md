@@ -74,3 +74,9 @@ Create a EmployeeFacade class for lesser functions, with the purpose of delegati
 ![p](./ocp.jpg)
 - how component protects one another
 ![p](./ocp_protection.jpg)
+
+- Directional Control: much complexity exists to make sure dependencies point to the right direction
+- Information Hiding: ```FinancialReportRequester``` prevents ```FinancialReportController``` from knowing too much internals of the ```Interactor```
+- No transitive dependencies: software entities should never depend on things they do not directly use
+
+### LSP: The Liskov Substitution Principle
