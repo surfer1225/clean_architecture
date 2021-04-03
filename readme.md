@@ -65,3 +65,12 @@ Create a EmployeeFacade class for lesser functions, with the purpose of delegati
 1. ![pic](./srp_sol_1.jpeg)
 2. ![pic](./srp_sol_2.jpeg)
 3. ![pic](./srp_sol_3.jpeg)
+
+### OCP: The Open-Closed Principle
+*A software artifact should be open for extension but closed for modification*
+- for example, simple extensions to the requirements should need simple engineering efforts
+
+##### A system that displays financial summary on a web page, to be extended to print the same information on paper
+![p](./ocp.jpg)
+- how component protects one another
+![p](./ocp_protection.jpg)
