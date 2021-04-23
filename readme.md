@@ -80,3 +80,45 @@ Create a EmployeeFacade class for lesser functions, with the purpose of delegati
 - No transitive dependencies: software entities should never depend on things they do not directly use
 
 ### LSP: The Liskov Substitution Principle
+*If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behaviour of P is unchanged when o1 is substituted for o2 then S is a subtype of T.*
+
+For example:
+![p](./lsp_inheritance.jpg)
+
+##### The Square/Rectangle Problem
+- User to access Rectangle(+setH,+setW) extended by Square(+setSide)
+- This violates LSP since user has to know whether a Rectangle is a Square
+
+##### LSP & Architecture
+- Earlier, LSP as a way to guide the use of inheritance
+- Now, applicable to all interface related concepts
+
+### ISP: The Interface Segregation Principle
+- it is harmful to depend on modules that contain more than you need
+- the following picture is the right way instead of having 3 users depending on OPS directly
+![p](./isp.jpg)
+
+### DIP: the Dependency Inversion Principle
+*source code dependencies refer only to abstractions, not to concretions, as much as possible*
+- __Stable abstractions:__ changes in implementations should not require changes in interface
+  - do not refer to volatile concrete classes. use Abstract Factories
+  - do not derive from volatile concrete classes
+  - do not override concrete functions: make function abstract and create multiple implementations
+  - never mention the name of anything concrete
+
+- __Factories:__
+  - creation of concrete objects require source code dependency on the concrete definition of that object
+  - use _Abstract Factories_ to manage this kind of undesirable dependency
+  ![p](./factory.jpg)
+  - DIP violations cannot be entirely removed
+
+## Chapter 12 Components
+_Dynamically linked files which can be plugged together at runtime are the software components of our architecture_
+
+## Chapter 13 Component Cohesion
+- REP: The Reuse/Release Equivalence Principle
+- CCP: The Common Closure Principle
+- CRP: The Common Reuse Principle
+
+### REP
+_The granule of reuse is the granule of release_
