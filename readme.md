@@ -122,3 +122,7 @@ _Dynamically linked files which can be plugged together at runtime are the softw
 
 ### REP
 _The granule of reuse is the granule of release_
+- Classes & modules that are formed into a component must belong to a cohesive group, and should be releasable together
+- The group should "make sense"
+
+### The Common Closure Principle
