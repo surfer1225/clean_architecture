@@ -128,3 +128,5 @@ _The granule of reuse is the granule of release_
 ### The Common Closure Principle
 _Gather into components those classes that change for the same reasons and at the same times._
 _Separate into different components those classes that change at different times and for different reasons._
+- Restatement of SRP 
+- For most applications,
