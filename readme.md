@@ -128,5 +128,20 @@ _The granule of reuse is the granule of release_
 ### The Common Closure Principle
 _Gather into components those classes that change for the same reasons and at the same times._
 _Separate into different components those classes that change at different times and for different reasons._
-- Restatement of SRP 
-- For most applications,
+- Restatement of SRP, SRP: a class should not contain multiple reasons to change, CCP says a component should not have multiple reasons to change
+- For most applications, maintainability > reusability
+- When new requirement comes, good chance that change can be restricted to a minimal number of components
+
+### The Common Reuse Principle
+_Don't force users of a component to depend on things they don't need._
+- focus on which classes should not be kept together in a component
+- classes that are not tightly bound to each other should not be in the same component
+
+
+### Tension for Component Cohesion
+- CCP & REP are inclusive principles to make components larger
+- CRP is an exclusive principle
+
+![p](./tension.jpeg)
+
+Generally, projects tend to start on the right hand side of the triangle, where reusability is sacrificed, the as project matures, slide to left. It also varies from project to project.
