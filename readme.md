@@ -145,3 +145,30 @@ _Don't force users of a component to depend on things they don't need._
 ![p](./tension.jpeg)
 
 Generally, projects tend to start on the right hand side of the triangle, where reusability is sacrificed, the as project matures, slide to left. It also varies from project to project.
+
+## Chapter 14 Component Coupling
+#### The Acyclic Dependencies Principle
+_Allow no cycles in the component dependency graph_
+
+##### Problem: code breaks the next morning after release
+
+##### Solution:
+1. The weekly build: developers focus on their private work, and integrate at the end of the week. This will not work as project scale grows.
+2. Eliminating Dependency Cycles:
+  - Partition the development environment into releasable components.
+  - Release with a version number, then it is the duty of the client team to decide whether to use it.
+  - During release process, individual components are released independently, verification from bottom up, e.g. components to be depended on will be tested first.
+  - The most important thing is that there is no cyclic dependency - component graph has to be a DAG
+  - Once there is a cycle, all components have to be released together
+
+Example of A Dependency Cycle:
+![p](./dependency_cycle.jpeg)
+
+##### Breaking the Cycle
+1. ![p](./di_break_cycle.jpeg)
+2. Add a new component that both depend on:
+![p](./new_component.jpeg)
+
+##### Top Down Design: isolation of volatility, components which change frequently should not affect other stable components
+- Component dependency graph created to protect stable components
+- Design structure grows & evolves with the logical design of the system
