@@ -172,3 +172,48 @@ Example of A Dependency Cycle:
 ##### Top Down Design: isolation of volatility, components which change frequently should not affect other stable components
 - Component dependency graph created to protect stable components
 - Design structure grows & evolves with the logical design of the system
+- If we tried to design the component dependency structure before any classes, it is likely to fail badly since we do not know much about common closure, reusable elements etc.
+
+##### The Stable Dependency Principle
+_Depend in the direction of stability_
+- Any component that we expect to be volatile should not be depended on
+- Generally, a component with lots of incoming dependencies is very stable
+- Fan-in: incoming dependencies, Fan-out: outgoing dependencies; Instability: _I = Fan-out / (Fan-in + Fan-out)_
+- In many cases, DI is a way to reverse the dependency, interface or abstract classes can be extremely stable
+
+##### The Stable Abstraction Principle
+_A component should be as abstract as it is stable_
+- Relationship bet/w stability & abstractness
+- a stable component should be abstract so that its stability does not prevent it from being extended
+- an unstable component should be concrete since its instability allows the concrete code within it to be easily changed
+- _A: Abstractness_: percentage of interfaces/abstract classes in a component to measure abstraction
+- too abstract & stable: useless; too concrete & unstable: rigid (e.g. database schema, String class in Java - though String class rarely changes so it is ok)
+- Try to have (A,I) as (0,1) or (1,0), though not possible in most cases
+
+## Chapter 15: What is Architecture?
+_Ultimate goal: minimize the lifetime cost of the system and to maximize programmer productivity_
+
+___Architecture of a software system is the shape given to that system. The form of the shape is in the division of that system into components, the arrangement of those components, and the ways in which those components communicate with each other. And the strategy behind that facilitation is to leave as many options open as possible, for as long as possible___
+
+#### Development
+- small team tends to produce monolithic system with no well-defined architecture
+- system developed by 5 teams may end up having 5 components
+- both are not ideal
+
+#### Deployment
+- make a system that can be easily deployed with a single action
+- consider the factor of deployment initially
+- many micro-service architecture becomes difficult to maintain because of this
+
+#### Operation
+- A good software architecture communicates the operational needs of the system (e.g. database maintenance, adding servers etc.)
+- Certain examples include: stateless vs stateful login
+
+#### Maintenance
+- Mitigate the cost of troubleshooting & fixing bugs etc.
+- Cost to figure out a bug should be low
+- Cost to fix a bug should be low, and no additional defects should come out of it
+
+#### Keeping Options Open
+![p](./open_options.jpeg)
+![p](./open_option_eg.jpeg)
